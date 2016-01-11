@@ -44,14 +44,16 @@ end
 
 #Palindrome Iterative
 def palindrome_check_i(word)
-  until word.length <= 1
-    return true if (word.length == 1) || (word.length == 0)
+  is_palindrome = true
+  until word.empty?
     if word[0] == word[-1]
       word = word[1..-2]
-    else 
-      return false
+    else
+      is_palindrome = false
+      break
     end
   end
+  is_palindrome 
 end
 
 if __FILE__ == $0
